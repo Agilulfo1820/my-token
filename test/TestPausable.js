@@ -1,4 +1,4 @@
-const MyToken = artifacts.require("MyToken");
+const MyToken = artifacts.require("Nameless");
 const truffleAssert = require('truffle-assertions');
 
 contract('Test Pausable', (accounts) => {

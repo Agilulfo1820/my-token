@@ -1,4 +1,4 @@
-const MyToken = artifacts.require("MyToken");
+const MyToken = artifacts.require("Nameless");
 const { assert } = require('chai');
 const {ethers} = require('ethers');
 

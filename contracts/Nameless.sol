@@ -6,14 +6,14 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyToken is ERC20, ERC20Burnable, Pausable, Ownable {
+contract Nameless is ERC20, ERC20Burnable, Pausable, Ownable {
     modifier whenNotPausedExceptOwner() {
         //owner do not follow pause rules
         require(!paused() || msg.sender == owner(), "Pausable: paused or not owner");
         _;
     }
 
-    constructor() ERC20("MyToken", "MTK") {
+    constructor() ERC20("Nameless", "NMLX") {
         _mint(msg.sender, 600000 * 10**decimals());
     }
 

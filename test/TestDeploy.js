@@ -1,4 +1,4 @@
-const MyToken = artifacts.require("MyToken");
+const MyToken = artifacts.require("Nameless");
 
 contract('Test Deploy', (accounts) => {
     const deployAccount = accounts[0];
