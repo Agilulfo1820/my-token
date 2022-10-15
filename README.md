@@ -26,4 +26,4 @@ Per verificare lo smart contract su Etherscan usare il comando `truffle run veri
 
 ## Goerli
 
-[0xA7B1f2d8A76Eed6a5007d110DFfa882931596D74](https://goerli.etherscan.io/address/0xA7B1f2d8A76Eed6a5007d110DFfa882931596D74)
+[0xD5B2010fd0DdB72abE391E704828D0a3C7f8FeE6](https://goerli.etherscan.io/address/0xD5B2010fd0DdB72abE391E704828D0a3C7f8FeE6)

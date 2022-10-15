@@ -14,7 +14,7 @@ contract Nameless is ERC20, ERC20Burnable, Pausable, Ownable {
     }
 
     constructor() ERC20("Nameless", "NMLX") {
-        _mint(msg.sender, 600000 * 10**decimals());
+        _mint(msg.sender, 10000000 * 10**decimals());
     }
 
     function pause() public onlyOwner {
