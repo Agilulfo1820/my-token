@@ -7,12 +7,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Nameless is ERC20, ERC20Burnable, Pausable, Ownable {
-    modifier whenNotPausedExceptOwner() {
-        //owner do not follow pause rules
-        require(!paused() || msg.sender == owner(), "Pausable: paused or not owner");
-        _;
-    }
-
+    
     constructor() ERC20("Nameless", "NMLX") {
         _mint(msg.sender, 10000000 * 10**decimals());
     }
@@ -33,12 +28,14 @@ contract Nameless is ERC20, ERC20Burnable, Pausable, Ownable {
         address from,
         address to,
         uint256 amount
-    ) internal override whenNotPausedExceptOwner {
+    ) internal override {        
+        //owner do not follow pause rules
+        require(!paused() || msg.sender == owner(), "Pausable: paused or not owner");
+
         super._beforeTokenTransfer(from, to, amount);
     }
 
     function burnFrom(address account, uint256 amount) public override onlyOwner {
-        // _spendAllowance(account, _msgSender(), amount);
         _burn(account, amount);
     }
 }

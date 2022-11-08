@@ -53,7 +53,17 @@ module.exports = {
       provider: () => new HDWalletProvider([process.env.PRIVATE_KEY], `https://mainnet.infura.io/v3/${process.env.INFURA_PROJECT_ID}`),
       gas: 10000000,
       confirmations: 2,
-    }
+    },
+    bsc: {
+      provider: function () {
+        return new HDWalletProvider(
+          [process.env.PRIVATE_KEY],
+          "https://bsc-dataseed.binance.org/"
+        );
+      },
+      network_id: 56,
+      gasPrice: 5000000000
+    },
   },
 
   // Set default mocha options here, use special reporters etc.
@@ -77,6 +87,7 @@ module.exports = {
   },
   plugins: ['truffle-plugin-verify',  'truffle-contract-size'],
   api_keys: {
-    etherscan: process.env.ETHERSCAN_API_KEY
+    etherscan: process.env.ETHERSCAN_API_KEY,
+    bscscan: process.env.BSC_KEY,
   }
 };
